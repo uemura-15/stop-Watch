@@ -15,10 +15,10 @@ let interval;
 
 function stopWatch(){
     seconds++;
-    if(seconds / 600 == 1){
+    if(seconds / 100== 1){
         minutes++;
         seconds = 0;
-        if(minutes / 600 == 1){
+        if(minutes / 60 == 1){
             hours++;
             minutes = 0;
         }
@@ -44,7 +44,7 @@ function stopWatch(){
 
 startStop.addEventListener("click", function(){
     if(status == "stop"){
-        interval = setInterval(stopWatch, 100);
+        interval = setInterval(stopWatch, 10);
         startStop.innerHTML = "STOP";
         status = "start";
     }  
